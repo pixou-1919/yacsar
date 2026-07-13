@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yacine & Sarah — Our Crazy World</title>
+  <title>Yacine & Einiya — Our Crazy World</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --rose:    #2e9e72;
-      --blush:   #c2eed9;
-      --cream:   #f0faf5;
-      --amber:   #52b788;
-      --deep:    #0a2e1e;
-      --text:    #1a3a28;
-      --muted:   #5a8a70;
-      --warm:    #e0f5eb;
+      --rose:    #3ee08c;
+      --blush:   #1c4a34;
+      --cream:   #07130d;
+      --amber:   #8effc2;
+      --deep:    #eafff2;
+      --text:    #d9f5e6;
+      --muted:   #8fb7a0;
+      --warm:    #0b2417;
+      --surface: #123423;
+      --panel:   #0e2318;
+      --gold:    #e8c07d;
     }
 
     html { scroll-behavior: smooth; }
@@ -26,7 +29,7 @@
       color: var(--text);
       font-family: 'Lora', serif;
       overflow-x: hidden;
-      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Cpath fill='%232e9e72' d='M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z'/%3E%3C/svg%3E") 10 10, pointer;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Cpath fill='%233ee08c' d='M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z'/%3E%3C/svg%3E") 10 10, pointer;
     }
 
     /* ── CUPID & FLYING HEARTS ── */
@@ -58,6 +61,7 @@
       50%      { transform: translateY(-14px) rotate(-4deg); }
     }
     #angel-svg { width: 90px; height: 90px; filter: drop-shadow(0 4px 12px rgba(46,158,114,.3)); }
+    #cupid-wrap.paused-float, #angel-wrap.paused-float { animation-play-state: paused; }
     #angel-heart-indicator {
       position: absolute;
       top: -10px; right: -10px;
@@ -80,8 +84,8 @@
       text-align: center;
       padding: 60px 24px;
       background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, #c8ede380 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 90% 100%, #a8dfc440 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(62,224,140,0.16) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 90% 100%, rgba(142,255,194,0.10) 0%, transparent 60%),
         var(--cream);
       z-index: 1;
     }
@@ -211,10 +215,10 @@
     .letter-card {
       max-width: 680px;
       margin: 0 auto;
-      background: white;
+      background: var(--surface);
       border-radius: 4px;
       padding: clamp(36px, 6vw, 70px) clamp(28px, 6vw, 70px);
-      box-shadow: 0 4px 40px rgba(201,98,106,.1), 0 1px 6px rgba(0,0,0,.04);
+      box-shadow: 0 4px 40px rgba(62,224,140,.12), 0 1px 6px rgba(0,0,0,.3);
       position: relative;
       overflow: hidden;
     }
@@ -285,16 +289,16 @@
       transform: translateX(-50%);
       width: 16px; height: 16px;
       border-radius: 50%;
-      background: white;
+      background: var(--surface);
       border: 3px solid var(--rose);
-      box-shadow: 0 0 0 4px rgba(201,98,106,.15);
+      box-shadow: 0 0 0 4px rgba(62,224,140,.15);
     }
     .timeline-card {
-      background: white;
+      background: var(--surface);
       border-radius: 12px;
       padding: 18px 22px;
       max-width: 260px;
-      box-shadow: 0 2px 20px rgba(0,0,0,.06);
+      box-shadow: 0 2px 20px rgba(0,0,0,.3);
       border-left: 3px solid var(--rose);
     }
     .timeline-item.right .timeline-card { border-left: none; border-right: 3px solid var(--amber); }
@@ -325,8 +329,8 @@
     .gallery-card {
       border-radius: 16px;
       overflow: hidden;
-      background: white;
-      box-shadow: 0 2px 20px rgba(0,0,0,.07);
+      background: var(--surface);
+      box-shadow: 0 2px 20px rgba(0,0,0,.35);
       transition: transform .3s ease, box-shadow .3s ease;
       display: flex;
       flex-direction: column;
@@ -421,18 +425,18 @@
       margin: 0 auto;
     }
     .reason-card {
-      background: white;
+      background: var(--surface);
       border-radius: 16px;
       padding: 28px 22px;
       text-align: center;
-      box-shadow: 0 2px 20px rgba(0,0,0,.05);
+      box-shadow: 0 2px 20px rgba(0,0,0,.3);
       transition: transform .3s, box-shadow .3s;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity .5s ease, transform .5s ease, box-shadow .3s;
     }
     .reason-card.visible { opacity: 1; transform: translateY(0); }
-    .reason-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(201,98,106,.18); }
+    .reason-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(62,224,140,.2); }
     .reason-card .r-icon { font-size: 2.2rem; margin-bottom: 14px; }
     .reason-card h3 {
       font-family: 'Playfair Display', serif;
@@ -443,7 +447,7 @@
     .reason-card p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
 
     /* ── COUNTDOWN ── */
-    #countdown { background: var(--deep); color: white; text-align: center; }
+    #countdown { background: var(--panel); color: white; text-align: center; }
     #countdown .section-title { color: white; }
     #countdown .section-title em { color: var(--blush); }
     #countdown .section-label { color: var(--blush); }
@@ -484,6 +488,23 @@
       font-size: clamp(1.2rem, 3vw, 1.8rem);
       color: var(--blush);
       opacity: .7;
+    }
+    .year-note-wrap {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .sitting-cupids {
+      width: clamp(160px, 26vw, 230px);
+      height: auto;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
+    }
+    .year-note {
+      margin-top: 10px;
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.3rem, 3.2vw, 1.9rem);
+      color: var(--rose);
     }
 
     /* ── FOOTER ── */
@@ -529,6 +550,84 @@
     }
     #lightbox-close:hover { opacity: 1; }
 
+    /* ── CELEBRATION POPUP ── */
+    #celebrate-modal {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(4,10,7,.86);
+      backdrop-filter: blur(3px);
+      z-index: 1100;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    #celebrate-modal.open { display: flex; }
+    .celebrate-card {
+      position: relative;
+      max-width: 460px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: linear-gradient(165deg, var(--surface) 0%, var(--panel) 100%);
+      border: 1px solid rgba(232,192,125,.35);
+      border-radius: 24px;
+      padding: 46px 32px 34px;
+      text-align: center;
+      box-shadow: 0 30px 80px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(142,255,194,.06);
+      opacity: 0;
+      transform: scale(.85) translateY(20px);
+      transition: opacity .35s ease, transform .35s cubic-bezier(.2,1.4,.4,1);
+    }
+    #celebrate-modal.open .celebrate-card { opacity: 1; transform: scale(1) translateY(0); }
+    .celebrate-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 24px;
+      background: radial-gradient(circle at 50% 0%, rgba(232,192,125,.16), transparent 65%);
+      pointer-events: none;
+    }
+    #celebrate-close {
+      position: absolute; top: 14px; right: 16px;
+      font-size: 1.6rem; color: var(--muted); cursor: pointer;
+      background: none; border: none; line-height: 1; opacity: .8;
+    }
+    #celebrate-close:hover { opacity: 1; color: var(--rose); }
+    .celebrate-cupid { width: 96px; height: 96px; margin: 0 auto 6px; display: block; }
+    .celebrate-eyebrow {
+      font-family: 'Dancing Script', cursive;
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: .08em;
+      margin-bottom: 4px;
+      position: relative;
+    }
+    .celebrate-title {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--deep);
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .celebrate-card p.celebrate-text {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.85;
+      font-size: .98rem;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .celebrate-card .celebrate-sign {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: var(--rose);
+      margin-top: 16px;
+      position: relative;
+    }
+
     @media (max-width: 600px) {
       .timeline-line { left: 20px; }
       .timeline-item, .timeline-item.right {
@@ -540,9 +639,151 @@
       .timeline-dot { left: 20px; }
       .timeline-card { max-width: 100%; border-left: 3px solid var(--rose) !important; border-right: none !important; }
     }
+    /* ── KISS POP (cupid + angel meeting) ── */
+    #kiss-pop {
+      position: fixed;
+      left: 50%; top: 12%;
+      transform: translate(-50%,-50%) scale(.5);
+      font-size: 2.2rem;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1001;
+      transition: opacity .4s ease, transform .4s ease;
+    }
+    #kiss-pop.show { opacity: 1; transform: translate(-50%,-50%) scale(1.25); }
+
+    /* ── FIREWORKS / CONFETTI ── */
+    #fx-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 998; }
+
+    .celebrate-btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: linear-gradient(135deg, var(--rose), var(--amber));
+      color: var(--panel);
+      border: none;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 34px;
+      border-radius: 50px;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 14px 30px -10px rgba(62,224,140,.55);
+      transition: transform .2s ease;
+    }
+    .celebrate-btn:hover { transform: translateY(-2px); }
+    .celebrate-btn:active { transform: scale(.97); }
+    /* ── SUNFLOWER CORNERS ── */
+    .sunflower-corner {
+      position: fixed;
+      bottom: -14px;
+      width: 130px; height: 130px;
+      pointer-events: none;
+      z-index: 5;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.4));
+      animation: sunflowerSway 8s ease-in-out infinite;
+    }
+    #sunflower-left  { left: -14px; transform-origin: bottom left; }
+    #sunflower-right { right: -14px; transform: scaleX(-1); transform-origin: bottom right; animation-delay: 1.2s; }
+    @keyframes sunflowerSway {
+      0%,100% { transform: rotate(-4deg); }
+      50%     { transform: rotate(4deg); }
+    }
+    #sunflower-right { }
+    #sunflower-right.sunflower-corner { animation-name: sunflowerSwayR; }
+    @keyframes sunflowerSwayR {
+      0%,100% { transform: scaleX(-1) rotate(-4deg); }
+      50%     { transform: scaleX(-1) rotate(4deg); }
+    }
+    @media (max-width: 640px) {
+      .sunflower-corner { width: 84px; height: 84px; }
+    }
+
+    /* ── YEAR RECAP (anniversary-day only) ── */
+    #year-recap { background: var(--warm); }
+
+    /* ── BEST MOMENTS (curated) ── */
+    #best-moments { background: var(--warm); }
+    .moments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 22px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .moment-card {
+      background: var(--surface);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0,0,0,.35);
+      border: 1px solid rgba(142,255,194,.08);
+    }
+    .moment-img {
+      aspect-ratio: 1;
+      background: var(--blush);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      font-family: 'Dancing Script', cursive;
+      font-size: 1rem;
+      text-align: center;
+      padding: 12px;
+      overflow: hidden;
+    }
+    .moment-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .moment-caption {
+      padding: 12px 14px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1rem;
+      color: var(--text);
+      text-align: center;
+      border-top: 1px solid rgba(142,255,194,.08);
+    }
   </style>
 </head>
 <body>
+<div id="kiss-pop">💚</div>
+<canvas id="fx-canvas"></canvas>
+
+<!-- SUNFLOWER CORNERS -->
+<svg id="sunflower-left" class="sunflower-corner" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <line x1="60" y1="70" x2="52" y2="118" stroke="#3e6b4a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M52 100 Q30 96 24 112" stroke="#3e6b4a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M55 88 Q75 84 82 100" stroke="#3e6b4a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <g transform="translate(60,55)">
+    <g fill="#e8c07d">
+      <ellipse rx="10" ry="20" transform="rotate(0)   translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(45)  translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(90)  translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(135) translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(180) translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(225) translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(270) translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(315) translate(0,-26)"/>
+    </g>
+    <circle r="17" fill="#8a5a2b"/>
+    <circle r="17" fill="none" stroke="#5c3a1e" stroke-width="1" opacity=".4"/>
+  </g>
+</svg>
+<svg id="sunflower-right" class="sunflower-corner" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <line x1="60" y1="70" x2="52" y2="118" stroke="#3e6b4a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M52 100 Q30 96 24 112" stroke="#3e6b4a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M55 88 Q75 84 82 100" stroke="#3e6b4a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <g transform="translate(60,55)">
+    <g fill="#e8c07d">
+      <ellipse rx="10" ry="20" transform="rotate(0)   translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(45)  translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(90)  translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(135) translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(180) translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(225) translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(270) translate(0,-26)"/>
+      <ellipse rx="10" ry="20" transform="rotate(315) translate(0,-26)"/>
+    </g>
+    <circle r="17" fill="#8a5a2b"/>
+    <circle r="17" fill="none" stroke="#5c3a1e" stroke-width="1" opacity=".4"/>
+  </g>
+</svg>
+
 
 <canvas id="cupid-canvas"></canvas>
 <div id="cupid-wrap">
@@ -650,7 +891,7 @@
 <!-- HERO -->
 <section id="hero">
   <p class="hero-label">✦ a little reminder of how much we own each other ✦</p>
-  <h1 class="hero-title"><em style="font-style:italic; color:var(--rose);">Sarah</em></h1>
+  <h1 class="hero-title"><em style="font-style:italic; color:var(--rose);">Einiya</em></h1>
   <p class="hero-subtitle">our crazy little love story</p>
   <p class="hero-date"><span></span>Since 14 July 2025<span></span></p>
   <span class="hero-heart">❤️</span>
@@ -667,22 +908,56 @@
     <p>im writing you this letter , just a reminder just a really small reminder of how much you mean to me bebe. of how much you own me , how much i love , respect and care about you.</p>
     <p>yesterday you gave me a feeling that i wont never forget , that call of us , you made me live my best birthday ever , all the laughs , the gestures , the moments we had is just a clue of how much we are.</p>
     <p>the strong us , the crazy us , the bad us :) , i love you baby. my baby , my love , my good girl.</p>
-    <p>i could never repay you , for what you did to me , for your patience , your love , your sympathy , yr craziness. i can just tell you that you own me sarah , so so badly , that whatever happens f hyatna , you will always be my priority. my number 1 , only you baby. bcz i know i will always have you , always baby.</p>
+    <p>i could never repay you , for what you did to me , for your patience , your love , your sympathy , yr craziness. i can just tell you that you own me einiya , so so badly , that whatever happens f hyatna , you will always be my priority. my number 1 , only you baby. bcz i know i will always have you , always baby.</p>
     <p>well i cant do 21 letters like that boy did xd , neither write about everything about us in one letter , but i can tell you that i will always love you , more and more and more , bcz i belong to you my love.</p>
     <p>in the end , hopefully we carry on until the day i put a ring in your hand mama.</p>
-    <p class="signature">i crazy you , sarah 💚</p>
+    <p class="signature">i crazy you , einiya 💚</p>
   </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
   <p class="section-label">captured moments</p>
-  <h2 class="section-title">Our <em>Gallery</em></h2>
+  <h2 class="section-title">Our First Year <em>Moments</em></h2>
   <div class="divider"><span class="divider-heart">♥</span></div>
   <div class="gallery-grid" id="gallery-grid"></div>
   <input type="file" id="file-input" accept="image/*" multiple />
   <button class="upload-btn" id="upload-btn">+ Add Our Photos</button>
   <div id="upload-status" style="text-align:center;margin-top:12px;font-family:'Dancing Script',cursive;color:var(--rose);font-size:1rem;min-height:24px;"></div>
+</section>
+
+<!-- YEAR RECAP (only shown on the anniversary itself) -->
+<section id="year-recap" style="display:none;">
+  <p class="section-label">every month of it</p>
+  <h2 class="section-title">A Year of <em>Us</em></h2>
+  <div class="divider"><span class="divider-heart">♥</span></div>
+  <div class="moments-grid">
+    <!-- Replace each src below with your own photo, and edit the caption text. -->
+    <div class="moment-card">
+      <div class="moment-img"><img src="REPLACE_WITH_PHOTO_1.jpg" alt="Yacine and Einiya" onerror="this.parentElement.textContent='drop photo here'"></div>
+      <div class="moment-caption">the beginning</div>
+    </div>
+    <div class="moment-card">
+      <div class="moment-img"><img src="REPLACE_WITH_PHOTO_2.jpg" alt="Yacine and Einiya" onerror="this.parentElement.textContent='drop photo here'"></div>
+      <div class="moment-caption">us, being us</div>
+    </div>
+    <div class="moment-card">
+      <div class="moment-img"><img src="REPLACE_WITH_PHOTO_3.jpg" alt="Yacine and Einiya" onerror="this.parentElement.textContent='drop photo here'"></div>
+      <div class="moment-caption">the crazy days</div>
+    </div>
+    <div class="moment-card">
+      <div class="moment-img"><img src="REPLACE_WITH_PHOTO_4.jpg" alt="Yacine and Einiya" onerror="this.parentElement.textContent='drop photo here'"></div>
+      <div class="moment-caption">the soft days</div>
+    </div>
+    <div class="moment-card">
+      <div class="moment-img"><img src="REPLACE_WITH_PHOTO_5.jpg" alt="Yacine and Einiya" onerror="this.parentElement.textContent='drop photo here'"></div>
+      <div class="moment-caption">the birthday call ♥</div>
+    </div>
+    <div class="moment-card">
+      <div class="moment-img"><img src="REPLACE_WITH_PHOTO_6.jpg" alt="Yacine and Einiya" onerror="this.parentElement.textContent='drop photo here'"></div>
+      <div class="moment-caption">still crazy about you</div>
+    </div>
+  </div>
 </section>
 
 <!-- COUNTDOWN -->
@@ -691,7 +966,7 @@
   <h2 class="section-title">Together <em>Since</em></h2>
   <div class="counter-wrap">
     <div class="counter-unit">
-      <span class="counter-num" id="cnt-days">0</span>
+      <span class="counter-num" id="cnt-days">365</span>
       <span class="counter-label">Days</span>
     </div>
     <span class="counter-sep">:</span>
@@ -711,13 +986,151 @@
     </div>
   </div>
   <p class="since-text">of crazy, beautiful love ♥</p>
+
+  <div class="year-note-wrap">
+    <svg class="sitting-cupids" viewBox="0 0 230 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- chair -->
+      <rect x="28" y="46" width="174" height="12" rx="6" fill="#123423" stroke="#3ee08c" stroke-width="1.5" opacity="0.55"/>
+      <rect x="34" y="118" width="162" height="13" rx="5" fill="#123423" stroke="#3ee08c" stroke-width="1.5" opacity="0.55"/>
+      <line x1="46" y1="131" x2="46" y2="154" stroke="#0e2318" stroke-width="7" stroke-linecap="round"/>
+      <line x1="184" y1="131" x2="184" y2="154" stroke="#0e2318" stroke-width="7" stroke-linecap="round"/>
+
+      <!-- ANGEL sitting (left) -->
+      <g transform="translate(85,100)">
+        <ellipse cx="-30" cy="-30" rx="14" ry="8" fill="white" opacity="0.85" transform="rotate(-16)"/>
+        <ellipse cx="0" cy="-42" rx="11" ry="4" fill="none" stroke="#f9d71c" stroke-width="2.2" opacity="0.9"/>
+        <!-- seated body -->
+        <ellipse cx="0" cy="-8" rx="14" ry="16" fill="#ffe0b2"/>
+        <path d="M-12 0 Q0 8 12 0 L12 12 Q0 16 -12 12 Z" fill="#c8eed9"/>
+        <!-- thighs bent forward -->
+        <path d="M-11 10 Q-16 16 -22 16" stroke="#ffe0b2" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M11 10 Q17 15 26 13" stroke="#ffe0b2" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <!-- shins down to floor -->
+        <line x1="-22" y1="16" x2="-24" y2="30" stroke="#ffe0b2" stroke-width="6" stroke-linecap="round"/>
+        <line x1="26" y1="13" x2="30" y2="28" stroke="#ffe0b2" stroke-width="6" stroke-linecap="round"/>
+        <!-- back hair -->
+        <path d="M-12 -34 Q-19 -18 -17 6" stroke="#1a1a1a" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M12 -34 Q18 -18 16 6" stroke="#1a1a1a" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <!-- near arm resting toward cupid -->
+        <line x1="12" y1="-10" x2="30" y2="-2" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <!-- head tilted down -->
+        <g transform="rotate(14)">
+          <circle cx="0" cy="-30" r="12" fill="#ffe0b2"/>
+          <ellipse cx="0" cy="-40" rx="12" ry="5.5" fill="#222222"/>
+          <path d="M-12 -37 Q0 -45 12 -37" fill="#222222"/>
+          <path d="M-7 -30 Q-4 -28.5 -1 -30" stroke="#3a2000" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M-5 -24 Q0 -21 4 -24" stroke="#c97b4b" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="5" cy="-26" rx="3" ry="1.8" fill="#ffb7b2" opacity="0.6"/>
+        </g>
+      </g>
+
+      <!-- CUPID sitting (right) -->
+      <g transform="translate(150,100)">
+        <ellipse cx="30" cy="-30" rx="13" ry="7.5" fill="white" opacity="0.8" transform="rotate(16)"/>
+        <ellipse cx="0" cy="-8" rx="14" ry="16" fill="#ffe0b2"/>
+        <text x="0" y="-4" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="bold" fill="#2e9e72">S</text>
+        <path d="M-12 0 Q0 7 12 0 L12 11 Q0 15 -12 11 Z" fill="#3ee08c"/>
+        <!-- thighs bent forward -->
+        <path d="M11 10 Q16 16 22 16" stroke="#ffe0b2" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M-11 10 Q-17 15 -26 13" stroke="#ffe0b2" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <!-- shins -->
+        <line x1="22" y1="16" x2="24" y2="30" stroke="#ffe0b2" stroke-width="6" stroke-linecap="round"/>
+        <line x1="-26" y1="13" x2="-30" y2="28" stroke="#ffe0b2" stroke-width="6" stroke-linecap="round"/>
+        <!-- near arm resting toward angel -->
+        <line x1="-12" y1="-10" x2="-30" y2="-2" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <!-- head tilted down -->
+        <g transform="rotate(-14)">
+          <circle cx="0" cy="-30" r="12" fill="#ffe0b2"/>
+          <rect x="-11" y="-42" width="22" height="6.5" rx="3" fill="#1a1a1a"/>
+          <rect x="-12" y="-39" width="24" height="4.5" rx="2" fill="#222222"/>
+          <path d="M1 -30 Q4 -28.5 7 -30" stroke="#3a2000" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M-4 -24 Q0 -21 5 -24" stroke="#c97b4b" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        </g>
+      </g>
+    </svg>
+    <p class="year-note">finally a damn year</p>
+  </div>
+
+  <button class="celebrate-btn" id="celebrate-btn">Celebrate Us ✨</button>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p class="f-names">Yacine <span class="amp">♥</span> Sarah</p>
+  <p class="f-names">Yacine <span class="amp">♥</span> Einiya</p>
   <p>made with love · 14.07.2025 · forever crazy for each other</p>
 </footer>
+
+<!-- CELEBRATION POPUP -->
+<div id="celebrate-modal">
+  <div class="celebrate-card">
+    <button id="celebrate-close">×</button>
+    <svg class="celebrate-cupid" viewBox="0 0 170 130" xmlns="http://www.w3.org/2000/svg" style="width:190px;height:145px;">
+      <!-- little hearts drifting above the kiss -->
+      <text x="80" y="14" text-anchor="middle" font-size="12" opacity="0.8">💚</text>
+      <text x="65" y="24" text-anchor="middle" font-size="8" opacity="0.6">♥</text>
+      <text x="95" y="24" text-anchor="middle" font-size="8" opacity="0.6">♥</text>
+
+      <!-- ANGEL (left), leaning in -->
+      <g transform="translate(58,66) rotate(9)">
+        <ellipse cx="-32" cy="-6" rx="15" ry="9" fill="white" opacity="0.9" transform="rotate(-24)"/>
+        <ellipse cx="0" cy="-40" rx="12" ry="4" fill="none" stroke="#f9d71c" stroke-width="2.5" opacity="0.9"/>
+        <ellipse cx="0" cy="2" rx="14" ry="18" fill="#ffe0b2"/>
+        <path d="M-12 11 Q0 21 12 11 L10 27 Q0 32 -10 27 Z" fill="#c8eed9"/>
+        <!-- back hair -->
+        <path d="M-13 -31 Q-21 -10 -19 20" stroke="#1a1a1a" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <path d="M13 -31 Q19 -10 17 18" stroke="#1a1a1a" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <!-- far arm, down -->
+        <line x1="-14" y1="-1" x2="-25" y2="13" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <!-- near arm, reaching around cupid -->
+        <line x1="13" y1="-3" x2="40" y2="8" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <!-- legs -->
+        <line x1="-6" y1="20" x2="-10" y2="35" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <line x1="6" y1="20" x2="10" y2="35" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <!-- head -->
+        <circle cx="0" cy="-25" r="13" fill="#ffe0b2"/>
+        <ellipse cx="0" cy="-36" rx="13" ry="6" fill="#222222"/>
+        <path d="M-13 -33 Q0 -41 13 -33" fill="#222222"/>
+        <!-- eyes closed -->
+        <path d="M-9 -26 Q-6 -24 -3 -26" stroke="#3a2000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- smile -->
+        <path d="M-6 -19 Q-1 -15 4 -19" stroke="#c97b4b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="6" cy="-21" rx="3.5" ry="2" fill="#ffb7b2" opacity="0.6"/>
+      </g>
+
+      <!-- CUPID (right), leaning in -->
+      <g transform="translate(108,66) rotate(-9)">
+        <ellipse cx="30" cy="-6" rx="14" ry="8" fill="white" opacity="0.85" transform="rotate(24)"/>
+        <ellipse cx="0" cy="2" rx="14" ry="18" fill="#ffe0b2"/>
+        <text x="0" y="5" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#2e9e72">S</text>
+        <path d="M-12 11 Q0 19 12 11 L10 25 Q0 29 -10 25 Z" fill="#3ee08c"/>
+        <!-- far arm, down -->
+        <line x1="14" y1="-1" x2="25" y2="13" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <!-- near arm, reaching around angel -->
+        <line x1="-13" y1="-3" x2="-40" y2="8" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <!-- legs -->
+        <line x1="-6" y1="20" x2="-10" y2="35" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <line x1="6" y1="20" x2="10" y2="35" stroke="#ffe0b2" stroke-width="5" stroke-linecap="round"/>
+        <!-- head -->
+        <circle cx="0" cy="-25" r="13" fill="#ffe0b2"/>
+        <rect x="-12" y="-39" width="24" height="7" rx="3" fill="#1a1a1a"/>
+        <rect x="-13" y="-36" width="26" height="5" rx="2" fill="#222222"/>
+        <!-- eyes closed -->
+        <path d="M-4 -26 Q-1 -24 2 -26" stroke="#3a2000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- smile -->
+        <path d="M-4 -19 Q1 -15 6 -19" stroke="#c97b4b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- tiny bow tucked behind -->
+        <line x1="24" y1="-8" x2="40" y2="-18" stroke="#8B4513" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+      </g>
+    </svg>
+    <p class="celebrate-eyebrow">✦ a little something ✦</p>
+    <h3 class="celebrate-title">hey you , hey sarah</h3>
+    <p class="celebrate-text">wow , a year from now , it was the first time shftk fiha</p>
+    <p class="celebrate-text">a year from now , in that damn ceremony , the red top , the jeans , the heels , you with yr beautifull hair , that smile , i cant forget how you made me feel that moment, breathless , my knees felt week , idk how i came to you , asked for your contact ( with the weirdest way ever mdr) but im so glad that i had that courage , i knew you , i knew my girl , my sarah , my baby , my everything , you cant imagine the things you did to me , how you changed me , you changed my prespective , my vision , how you guided me from darkness to light , indeed you are my light , forever gratfull of everthing we had , even when we fought , even in our bad days , in the days that everything looked hard , i had you , and you had me , i applogize for every moment i made you mad , you are such an amazing wonderfull soul , that i love , i crave , that no matter , i will always do my best and change for her , bcz you own me , you and only you</p>
+    <p class="celebrate-text">idk today if you will recieve this in a good or a bad way , if you still have the same love and craziness towards me , know something , that no matter what happens binatna , no matter the situation we are in , i will always be yr baby boy , yr number one supporter , yr yacine , and i will awlays wish you well and wish to see you happy , frhana . shaba , zella , nchofak sarah</p>
+    <p class="celebrate-text">ntnak elik einiya , HAPPY 1 YEAR ANNIVERSARY</p>
+    <p class="celebrate-sign">forever yours, yacine 🌻💚</p>
+  </div>
+</div>
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
@@ -726,6 +1139,32 @@
 </div>
 
 <script>
+  /* ── CELEBRATE MODAL OPEN/CLOSE — wired up first, before anything else that could error ── */
+  (function() {
+    const btn = document.getElementById('celebrate-btn');
+    const closeBtn = document.getElementById('celebrate-close');
+    const modal = document.getElementById('celebrate-modal');
+    if (btn && modal) {
+      btn.addEventListener('click', () => {
+        modal.classList.add('open');
+        if (typeof confettiBurst === 'function') {
+          confettiBurst(window.innerWidth / 2, window.innerHeight * 0.5, 120);
+        }
+      });
+    }
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+    }
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target.id === 'celebrate-modal') modal.classList.remove('open');
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') modal.classList.remove('open');
+      });
+    }
+  })();
+
   /* ── CUPID & HEARTS CANVAS ── */
   const canvas = document.getElementById('cupid-canvas');
   const ctx = canvas.getContext('2d');
@@ -737,6 +1176,36 @@
   }
   resize();
   window.addEventListener('resize', resize);
+
+  /* ── AUTO-POP THE ANNIVERSARY CELEBRATION AT MIDNIGHT, JULY 14 ── */
+  /* ── ALSO SWAPS SECTIONS: letter + gallery hide, year-recap shows, on the 14th only ── */
+  let anniversaryPopupShown = false;
+  function checkAnniversaryDay() {
+    const now = new Date();
+    const isAnniversaryDay = now.getMonth() === 6 && now.getDate() === 14; // July 14
+
+    const letterSection = document.getElementById('letter');
+    const gallerySection = document.getElementById('gallery');
+    const recapSection = document.getElementById('year-recap');
+    if (letterSection) letterSection.style.display = isAnniversaryDay ? 'none' : '';
+    if (gallerySection) gallerySection.style.display = isAnniversaryDay ? 'none' : '';
+    if (recapSection) recapSection.style.display = isAnniversaryDay ? '' : 'none';
+
+    const thisYearKey = 'anniversary-popup-' + now.getFullYear();
+    let alreadyShownThisYear = false;
+    try { alreadyShownThisYear = !!sessionStorage.getItem(thisYearKey); } catch (e) { /* storage blocked, e.g. local file — fall back to in-memory flag only */ }
+    if (isAnniversaryDay && !anniversaryPopupShown && !alreadyShownThisYear) {
+      anniversaryPopupShown = true;
+      try { sessionStorage.setItem(thisYearKey, '1'); } catch (e) { /* ignore */ }
+      const modal = document.getElementById('celebrate-modal');
+      if (modal) modal.classList.add('open');
+      if (typeof confettiBurst === 'function') {
+        confettiBurst(window.innerWidth / 2, window.innerHeight * 0.5, 120);
+      }
+    }
+  }
+  checkAnniversaryDay();
+  setInterval(checkAnniversaryDay, 30000);
 
   // Cupid (right) & Angel (left)
   let cupidT = 0, angelT = 1.5;
@@ -783,25 +1252,79 @@
     ctx.restore();
   }
 
+  /* ── HUG & KISS MEETING CYCLE ── */
+  const kissPop = document.getElementById('kiss-pop');
+  let meeting = false, meetStart = 0, kissedThisCycle = false;
+  const MEET_DURATION = 5200; // ms for one full approach-hold-return cycle
+  function easeInOutCubic(x) { return x < 0.5 ? 4*x*x*x : 1 - Math.pow(-2*x+2,3)/2; }
+  function startMeeting(ts) { meeting = true; meetStart = ts; kissedThisCycle = false; }
+  setTimeout(() => startMeeting(performance.now()), 3500);
+  setInterval(() => startMeeting(performance.now()), 17000);
+
   let lastSpawn = 0;
   function animate(ts) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Float cupid right side
+    // Base floating positions (right = cupid, left = angel)
     cupidT += 0.008;
-    cupidX = window.innerWidth * 0.80 + Math.sin(cupidT * 0.6) * 18;
-    cupidY = window.innerHeight * 0.08 + Math.sin(cupidT) * 14;
+    angelT += 0.007;
+    const baseCupidX = window.innerWidth * 0.80 + Math.sin(cupidT * 0.6) * 18;
+    const baseCupidY = window.innerHeight * 0.08 + Math.sin(cupidT) * 14;
+    const baseAngelX = window.innerWidth * 0.04 + Math.sin(angelT * 0.5) * 14;
+    const baseAngelY = window.innerHeight * 0.08 + Math.sin(angelT) * 14;
+
+    if (meeting) {
+      const t = ts - meetStart;
+      if (t > MEET_DURATION) {
+        meeting = false;
+        cupidX = baseCupidX; cupidY = baseCupidY;
+        angelX = baseAngelX; angelY = baseAngelY;
+        kissPop.classList.remove('show');
+      } else {
+        const p = t / MEET_DURATION;
+        const approach = easeInOutCubic(Math.min(p / 0.32, 1));
+        const ret = p > 0.68 ? easeInOutCubic((p - 0.68) / 0.32) : 0;
+        const mix = p < 0.68 ? approach : 1 - ret;
+
+        const centerX = window.innerWidth / 2;
+        const centerY = Math.min(window.innerHeight * 0.14, 140);
+        const meetCupidX = centerX + 6, meetCupidY = centerY;
+        const meetAngelX = centerX - 60, meetAngelY = centerY;
+
+        cupidX = baseCupidX + (meetCupidX - baseCupidX) * mix;
+        cupidY = baseCupidY + (meetCupidY - baseCupidY) * mix;
+        angelX = baseAngelX + (meetAngelX - baseAngelX) * mix;
+        angelY = baseAngelY + (meetAngelY - baseAngelY) * mix;
+
+        cupidWrap.style.transform = `rotate(${-6 * (1 - mix)}deg)`;
+        angelWrap.style.transform = `rotate(${6 * (1 - mix)}deg)`;
+        cupidWrap.classList.toggle('paused-float', mix > 0.05);
+        angelWrap.classList.toggle('paused-float', mix > 0.05);
+
+        if (mix > 0.9 && !kissedThisCycle) {
+          kissedThisCycle = true;
+          kissPop.style.left = (centerX - 26) + 'px';
+          kissPop.style.top = (centerY + 55) + 'px';
+          kissPop.classList.add('show');
+          for (let b = 0; b < 12; b++) {
+            burstParticles.push({ x: centerX - 26, y: centerY + 55, vx: (Math.random()-0.5)*6, vy: Math.random()*-5-1, size: 8+Math.random()*8, alpha: 1, color: Math.random() > 0.5 ? '#2e9e72' : '#52b788' });
+          }
+        }
+        if (mix < 0.5) kissPop.classList.remove('show');
+      }
+    } else {
+      cupidX = baseCupidX; cupidY = baseCupidY;
+      angelX = baseAngelX; angelY = baseAngelY;
+      cupidWrap.style.transform = ''; angelWrap.style.transform = '';
+      cupidWrap.classList.remove('paused-float'); angelWrap.classList.remove('paused-float');
+    }
+
     cupidWrap.style.left = cupidX + 'px';
     cupidWrap.style.top  = cupidY + 'px';
-
-    // Float angel left side
-    angelT += 0.007;
-    angelX = window.innerWidth * 0.04 + Math.sin(angelT * 0.5) * 14;
-    angelY = window.innerHeight * 0.08 + Math.sin(angelT) * 14;
     angelWrap.style.left = angelX + 'px';
     angelWrap.style.top  = angelY + 'px';
 
-    if (ts - lastSpawn > 700) { spawnHeart(); lastSpawn = ts; }
+    if (!meeting && ts - lastSpawn > 700) { spawnHeart(); lastSpawn = ts; }
 
     const aCX = angelX + 45, aCY = angelY + 45;
 
@@ -837,20 +1360,74 @@
   }
   requestAnimationFrame(animate);
 
-  /* ── COUNTDOWN ── */
+  /* ── COUNTDOWN (resets every 365 days — counts toward each new anniversary) ── */
   const start = new Date('2025-07-14T00:00:00');
+  let lastYearMark = 0;
   function updateClock() {
     const diff = Date.now() - start;
     const s = Math.floor(diff / 1000);
     const m = Math.floor(s / 60);
     const h = Math.floor(m / 60);
-    const d = Math.floor(h / 24);
+    const totalDays = Math.floor(h / 24);
+    const yearMark = Math.floor(totalDays / 365);
+    const d = totalDays;
     document.getElementById('cnt-days').textContent  = String(d);
     document.getElementById('cnt-hours').textContent = String(h % 24).padStart(2,'0');
     document.getElementById('cnt-mins').textContent  = String(m % 60).padStart(2,'0');
     document.getElementById('cnt-secs').textContent  = String(s % 60).padStart(2,'0');
+    if (yearMark > lastYearMark) { lastYearMark = yearMark; celebrateBurst(); }
   }
   updateClock(); setInterval(updateClock, 1000);
+
+  /* ── FIREWORKS / CONFETTI ── */
+  const fxCanvas = document.getElementById('fx-canvas');
+  const fxCtx = fxCanvas.getContext('2d');
+  function resizeFx() { fxCanvas.width = window.innerWidth; fxCanvas.height = window.innerHeight; }
+  resizeFx(); window.addEventListener('resize', resizeFx);
+
+  let fxParticles = [];
+  function confettiBurst(x, y, count) {
+    const colors = ['#3ee08c', '#8effc2', '#e8c07d', '#eafff2'];
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 2 + Math.random() * 5;
+      fxParticles.push({
+        x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 2,
+        g: 0.12,
+        size: 3 + Math.random() * 4,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        life: 100 + Math.random() * 40,
+        rot: Math.random() * Math.PI,
+        vr: (Math.random() - 0.5) * 0.3
+      });
+    }
+  }
+  function celebrateBurst() {
+    let n = 0;
+    const iv = setInterval(() => {
+      confettiBurst(window.innerWidth * (0.2 + Math.random() * 0.6), window.innerHeight * (0.2 + Math.random() * 0.3), 70);
+      n++;
+      if (n > 4) clearInterval(iv);
+    }, 350);
+  }
+  function fxLoop() {
+    fxCtx.clearRect(0, 0, fxCanvas.width, fxCanvas.height);
+    fxParticles.forEach(p => {
+      p.vy += p.g; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life--;
+      fxCtx.save();
+      fxCtx.translate(p.x, p.y);
+      fxCtx.rotate(p.rot);
+      fxCtx.fillStyle = p.color;
+      fxCtx.globalAlpha = Math.max(p.life / 140, 0);
+      fxCtx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+      fxCtx.restore();
+    });
+    fxParticles = fxParticles.filter(p => p.life > 0 && p.y < fxCanvas.height + 40);
+    requestAnimationFrame(fxLoop);
+  }
+  fxLoop();
 
   /* ── GALLERY ── */
   const MAX_SLOTS = 9;
@@ -1128,9 +1705,9 @@
         position: absolute;
         bottom: 64px; right: 0;
         width: 320px;
-        background: white;
+        background: var(--surface);
         border-radius: 20px;
-        box-shadow: 0 8px 40px rgba(0,0,0,.15);
+        box-shadow: 0 8px 40px rgba(0,0,0,.5);
         overflow: hidden;
         transform: scale(.9) translateY(20px);
         transform-origin: bottom right;
